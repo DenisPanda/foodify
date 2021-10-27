@@ -1,0 +1,23 @@
+@import "../../../_colors";
+
+.main-wrapper {
+    min-height: 100vh;
+    background: $main-bckg;
+
+    &__graphic {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 20rem;
+        background: url('../../../assets/images/foood.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-clip-path: polygon(0% 33.33%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0% 0%, 100% 0, 100% 85%, 15% 100%, 0 100%);
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+    }
+}

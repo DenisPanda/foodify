@@ -1,0 +1,10 @@
+@import "../../../_colors";
+
+.badge-icon {
+    width: 2rem;
+    border-radius: 2rem;
+    padding: .2rem 1rem;
+    text-align: center;
+    background: $badge-bckg;
+    color: $txt-secondary;
+}

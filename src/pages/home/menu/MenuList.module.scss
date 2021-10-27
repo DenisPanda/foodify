@@ -1,0 +1,27 @@
+@import '../../../_colors';
+
+.container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list {
+    padding-inline-start: 0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background: $bckg-primary;
+    border-radius: .5rem;
+
+    min-width: 400px;
+    max-width: 95vw;
+
+    li {
+        padding: 0;
+    }
+}

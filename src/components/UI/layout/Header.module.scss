@@ -1,0 +1,16 @@
+@import "../../../_colors";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    background: $header-bckg;
+    position: relative;
+}
+
+.title {
+    color: $txt-secondary;
+    font-size: 2rem;
+    font-weight: 800;
+}

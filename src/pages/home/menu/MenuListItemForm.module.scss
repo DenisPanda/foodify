@@ -1,0 +1,54 @@
+@import '../../../_colors';
+
+.container {
+    display: flex;
+    // display: block;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+
+    button {
+        margin-top: 10px;
+        color: $btn-txt-primary;
+        background-color: $btn-primary;
+        border: none;
+        padding: 4px 18px;
+        border-radius: 2em;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            box-shadow: inset 0px 0px 17px 3px rgba(0,0,0,0.75);
+        }
+    }
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: center;
+    flex-grow: 0;
+
+    // flex-grow: 0;
+    label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-right: 6px;
+    }
+
+    input {
+        // display: flex;
+        flex-grow: 0.2;
+        // flex-grow: 0;
+        flex-shrink: 1;
+        width: 100%;
+        flex-basis: 40px;
+    }
+}

@@ -1,0 +1,36 @@
+@import '../../../_colors';
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 4px 0;
+    border-bottom: 1px solid rgb(210, 208, 208);
+
+    &>:first-child {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+    }
+
+    &__name {
+        font-style: bold;
+        font-weight: 800;
+    }
+
+    &__description {
+        font-style: italic;
+        font-size: 0.8rem;
+        padding-top: 4px;
+    }
+
+    &__price {
+        font-style: bold;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: $price-color;
+        padding-top: 4px;
+        padding-bottom: 10px;
+    }
+}

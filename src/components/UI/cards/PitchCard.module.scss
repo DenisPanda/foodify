@@ -1,0 +1,20 @@
+@import '../../../_colors';
+
+.pitch-card {
+    border-radius: .5rem;
+    box-shadow: 0px 9px 15px -4px rgba(0,0,0,0.75);
+    color: $txt-secondary;
+    background: $bckg-secondary;
+    padding: 1rem;
+
+    &__title {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .content {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

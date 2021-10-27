@@ -1,0 +1,42 @@
+@import './_colors';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.centered-txt {
+  text-align: center;
+}
+
+
+button {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    box-shadow: inset 0px 0px 17px 3px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.primary-btn {
+  border: none;
+  background: $btn-primary;
+  color: $btn-txt-primary;
+}
+
+.secondary-btn {
+  border: 1px solid $btn-txt-seconday;
+  background: $btn-secondary;
+  color: $btn-txt-secondary;
+}
