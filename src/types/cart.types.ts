@@ -7,3 +7,7 @@ export interface CartTotalProps {
 export interface CartItem extends OrderItem {
     amount: number;
 }
+
+export enum CartAction {
+    "UPDATE"
+}

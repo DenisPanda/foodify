@@ -1,25 +1,27 @@
-import React from 'react';
+import { MenuListItemProp } from '../../../types/menuListItem.type';
+import { getCurrencySymbol } from '../../../utils/helpers/currency.helpers';
 import { kamelStyles } from '../../../utils/helpers/styles.helpers';
 import _styles from './MenuListItem.module.scss';
 import MenuListItemForm from './MenuListItemForm';
 
 const styles = kamelStyles(_styles);
 
-function MenuListItem() {
+function MenuListItem(props: MenuListItemProp) {
+
     return (
         <li className={styles.menuItem}>
             <div>
                 <div className={styles.menuItem__name}>
-                    Sushi
+                    {props.item.title}
                 </div>
                 <div className={styles.menuItem__description}>
-                    some description of sushi
+                    {props.item.shortDescription}
                 </div>
                 <div className={styles.menuItem__price}>
-                    $2.99
+                    {getCurrencySymbol(props.item.currency)}{props.item.price}
                 </div>
             </div>
-            <MenuListItemForm></MenuListItemForm>
+            <MenuListItemForm item={props.item} itemHandler={props.itemHandler}></MenuListItemForm>
         </li>
     );
 }

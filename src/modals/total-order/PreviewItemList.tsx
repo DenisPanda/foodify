@@ -1,7 +1,10 @@
 import React from "react";
+import PreviewItem from "./PreviewItem";
 
 function PreviewItemList() {
-    return (<div></div>);
+    return (<div>
+        <PreviewItem></PreviewItem>
+    </div>);
 }
 
 export default PreviewItemList;

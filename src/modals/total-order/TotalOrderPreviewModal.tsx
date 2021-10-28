@@ -1,11 +1,9 @@
-import ReactDom from "react-dom";
-import Backdrop from "../common/Backdrop";
+import { PropsWithChildren } from "react";
+import { ModalBaseProp } from "../../types/modal.type";
+import SimpleCardModal from "../common/SimpleCardModal";
 
-function TotalOrderPreviewModal() {
-  return ReactDom.createPortal(
-    <Backdrop></Backdrop>,
-    document.getElementById("modal-root") as Element
-  );
+function TotalOrderPreviewModal(props: PropsWithChildren<ModalBaseProp>) {
+  return <SimpleCardModal backdropClickHandle={props.backdropClickHandle}>{props.children}</SimpleCardModal>;
 }
 
 export default TotalOrderPreviewModal;

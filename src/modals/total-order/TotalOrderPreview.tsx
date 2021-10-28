@@ -1,3 +1,4 @@
+import { ITotalOrderPreviewProps } from "../../types/totalOrder.type";
 import { kamelStyles } from "../../utils/helpers/styles.helpers";
 import ConfirmBar from "../common/ConfirmBar";
 import PreviewItemList from "./PreviewItemList";
@@ -5,7 +6,7 @@ import _styles from "./TotalOrderPreview.module.scss";
 
 const styles = kamelStyles(_styles);
 
-function TotalOrderPreview() {
+function TotalOrderPreview(props: ITotalOrderPreviewProps) {
   const confirmClick = () => {
     console.log('Confirm clicked!');
   }
@@ -16,6 +17,8 @@ function TotalOrderPreview() {
 
   return (
     <div className={styles.totalOrder}>
+      <PreviewItemList></PreviewItemList>
+      <PreviewItemList></PreviewItemList>
       <PreviewItemList></PreviewItemList>
       <div className={styles.total}>
         <div>Total Amount</div>

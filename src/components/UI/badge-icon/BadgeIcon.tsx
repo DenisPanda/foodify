@@ -1,4 +1,3 @@
-import react from "react";
 import styles from "./BadgeIcon.module.scss";
 
 function BadgeIcon(props: { amount: number }) {

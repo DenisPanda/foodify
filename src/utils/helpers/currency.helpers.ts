@@ -1,7 +1,7 @@
 import { Currency } from '../../types/currency.types';
 import { LocaleCode } from './../../types/locale.types';
 
-export const getCurrencySymbol = (locale: LocaleCode, currency: Currency) =>
+export const getCurrencySymbol = (currency: Currency, locale: LocaleCode = 'en-US') =>
   (0)
     .toLocaleString(locale, {
       style: "currency",
