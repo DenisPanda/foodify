@@ -1,0 +1,23 @@
+@import "../../_colors";
+
+.control-btn {
+    &:first-child {
+        margin-right: .5rem;
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    font-size: 1.2rem;
+    padding: .01rem .8rem;
+
+    border: 1px solid $btn-txt-secondary;
+    border-radius: 0.2rem;
+    background: none;
+    color: $btn-txt-secondary;
+}

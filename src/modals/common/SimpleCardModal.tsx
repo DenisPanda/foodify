@@ -8,13 +8,20 @@ import _styles from "./SimpleCardModal.module.scss";
 
 const styles = kamelStyles(_styles);
 
+const preventPropagation = (e: React.MouseEvent<HTMLElement>) => {
+  e.preventDefault();
+  e.stopPropagation();
+}
+
 function SimpleCardModal(props: PropsWithChildren<ModalBaseProp>) {
   return ReactDom.createPortal(
     <Backdrop
       backdropClickHandle={props.backdropClickHandle}
       className="center-modal fade-in"
     >
-      <SimpleCard className={styles.simpleCard}>{props.children}</SimpleCard>
+      <SimpleCard  
+    onClick={preventPropagation}
+      className={styles.simpleCard}>{props.children}</SimpleCard>
     </Backdrop>,
     document.getElementById("modal-root") as Element
   );

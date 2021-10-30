@@ -1,19 +1,26 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 import { kamelStyles } from "../../utils/helpers/styles.helpers";
-import _styles from "./PreviewItemList.module.scss";
+import _styles from "./PreviewItem.module.scss";
 
 const styles = kamelStyles(_styles);
 
-// function PreviewItem(props: { name: string; amount: number; price: number }) {
-function PreviewItem() {
+function PreviewItem(props: PropsWithChildren<{
+  name: string;
+  amount: number;
+  price: string;
+}>) {
   return (
     <div className={styles.previewItem}>
-      <div className={styles.previewItem__data}>
-        <div className={styles.name}>Sushi</div>
+      <div className={styles.previewItem__leftColumn}>
+        <div className={styles.name}>{props.name}</div>
         <div className={styles.row}>
-          <div className={styles.price}>$22.99</div>
-          <div className={styles.amount}>x 1</div>
+          <div className={styles.price}>{props.price}</div>
+          <div className={styles.amount}>x {props.amount}</div>
         </div>
+      </div>
+
+      <div className={styles.previewItem__rightColumn}>
+        {props.children}
       </div>
     </div>
   );

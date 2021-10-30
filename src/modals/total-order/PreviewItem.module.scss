@@ -1,0 +1,52 @@
+@import "../../_colors";
+
+.preview-item {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: .5rem 0;
+    border-bottom: 2px solid $price-color;
+    margin-bottom: .8rem;
+
+    &__left-column, &__right-column {
+        display: flex;
+
+        &>div {
+            margin: .2rem 0;
+        }
+    }
+
+    &__left-column {
+        display: flex;
+        flex-flow: column;
+    }
+
+    &__right-column {
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: $price-color;
+}
+
+.amount {
+    margin-left: 40px;
+    border: 1px solid rgb(221, 220, 220);
+    border-radius: .2rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.2rem 0.4rem;
+}

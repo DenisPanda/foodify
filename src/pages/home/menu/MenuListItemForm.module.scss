@@ -2,9 +2,8 @@
 
 .container {
     display: flex;
-    // display: block;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     flex-grow: 0;
 
@@ -36,7 +35,6 @@
     justify-content: center;
     flex-grow: 0;
 
-    // flex-grow: 0;
     label {
         font-size: 0.8rem;
         font-weight: 700;
@@ -44,9 +42,7 @@
     }
 
     input {
-        // display: flex;
         flex-grow: 0.2;
-        // flex-grow: 0;
         flex-shrink: 1;
         width: 100%;
         flex-basis: 40px;

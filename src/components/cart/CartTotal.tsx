@@ -1,12 +1,11 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { CartItem, CartTotalProps } from "../../types/cart.types";
+import { CartAction, CartItem, CartTotalProps } from "../../types/cart.types";
 import { FaShoppingCart } from "react-icons/fa";
 import styles from "./CartTotal.module.scss";
 import BadgeIcon from "../UI/badge-icon/BadgeIcon";
 import TotalOrderPreviewModal from "../../modals/total-order/TotalOrderPreviewModal";
 import AppCtx from "../../context/app.context";
 import TotalOrderPreview from "../../modals/total-order/TotalOrderPreview";
-import SimpleCardModal from "../../modals/common/SimpleCardModal";
 
 /**
  * @TODO: Maybe this should be replaced with lodash-es debounce
@@ -31,10 +30,10 @@ function CartTotal(props: CartTotalProps) {
 
   const { cartData, cartDataHandler } = useContext(AppCtx);
 
-  const cb = useCallback(
+  const cb = useCallback( // eslint-disable-line react-hooks/exhaustive-deps
     debounce(() => setJustAdded(false), 1500),
     []
-  ); // eslint-disable-line react-hooks/exhaustive-deps
+  ); 
 
   useEffect(() => {
     if (!isInit) {
@@ -63,7 +62,7 @@ function CartTotal(props: CartTotalProps) {
   };
 
   const confirmModal = (data: CartItem[]) => {
-    console.log("Confirm modal clicked!", data);
+    cartDataHandler(CartAction.UPDATE, data);
     closeModal();
   };
 

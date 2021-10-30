@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import Main from "./components/UI/layout/Main";
 import AppCtx from "./context/app.context";
@@ -9,25 +9,38 @@ import { CART_ITEMS } from "./utils/data/carrtItems";
 function App() {
   const [cartData, setCartData] = useState(CART_ITEMS);
 
-  const dispatchCartDataEvent = (actionType: CartAction, _payload: CartItem[]) => {
+  const dispatchCartDataEvent = (
+    actionType: CartAction,
+    _payload: CartItem[]
+  ) => {
     switch (actionType) {
       case CartAction.UPDATE:
-        const [payload] =  _payload;
-
-        setCartData((state) => {
-          const list = state.map((itm) => {
-            if (itm.id === payload.id) {
-              return {
-                ...itm,
-                ...payload,
-              };
+        if (_payload.length) {
+          // map cart items by id
+          const payload = _payload.reduce((itms, itm) => {
+            if (itm.id) {
+              itms[itm.id] = itm;
             }
 
-            return itm;
-          });
+            return itms;
+          }, {} as { [prop: string]: CartItem });
 
-          return list;
-        });
+          setCartData((state) => {
+            const list = state.map((itm) => {
+              const cartItm = payload[itm.id];
+              if (cartItm) {
+                return {
+                  ...itm,
+                  ...cartItm,
+                };
+              }
+
+              return itm;
+            });
+
+            return list;
+          });
+        }
         return;
       default:
         return;
